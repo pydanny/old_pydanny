@@ -1,0 +1,4 @@
+django==1.2.1
+feedparser==4.1
+gdata==2.0.11.final
+github2==0.1.3
