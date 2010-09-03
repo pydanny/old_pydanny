@@ -1,0 +1,22 @@
+<html>
+
+<head>
+<title>pydanny:{% block head_title %}{{ flatpage.title }}{% endblock %}</title>
+<link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/base.css" />
+</head>
+
+<body>
+
+<div id="page_header">
+<h1>{{ flatpage.title }}</h1>
+</div>
+
+<div id="content">
+{% block content %}
+{{ flatpage.content }}
+{% endblock %}
+</div>
+
+</body>
+</html>
