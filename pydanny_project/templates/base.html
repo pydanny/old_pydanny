@@ -1,7 +1,8 @@
 <html>
 
 <head>
-<title>{{ title }}</title>
+<title>pydanny:{% block head_title %}Welcome{% endblock %}</title>
+<link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" />
 <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css" />
 </head>
 
@@ -12,11 +13,9 @@
 </div>
 
 <div id="content">
-<h2>blog post title</h2>
-<p>January 2, 2010</p>
-<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+{% block content %}
+<p>(coming soon)</p>
+{% endblock %}
 </div>
 
 </body>

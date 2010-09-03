@@ -1,1 +1,22 @@
-#page_header { background: #e2fcfc url('../img/header_gradient.png') repeat-x; }
+body {font-family:Helvetica LT, Helvetica, Arial, sans-serif; font-size:84%; color:#241c1c;}
+
+body, p, div {line-height:1.5;}
+
+h1, h2, h3, h4, h5, h6, p {padding:10px 0;}
+
+h1 {font-size:270%;}
+h2 {font-size:200%;}
+h3 {font-size:185%;}
+h4 {font-size:180%;}
+h5 {font-size:175%;}
+h6 {font-size:170%;}
+
+a, a:visited, a:hover {color:#89a02c; font-weight:900; text-decoration:none;}
+a:hover {text-decoration:underline;}
+
+
+#page_header {background:#e2fcfc url('../img/header_gradient.png') repeat-x; height:220px;}
+
+#page_header h1 {color:#378576;}
+
+#content {width:800px; margin:0 auto;}

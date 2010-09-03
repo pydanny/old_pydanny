@@ -1,3 +1,8 @@
+{% extends "base.html" %}
+
+{% block head_title %}Blog{% endblock %}
+
+{% block content %}
 <h1>Blogger</h1>
 
 {% for entry in entries %}
@@ -8,3 +13,5 @@
         {% endfor %}
     </div>
 {% endfor %}
+{% endblock %}
+
