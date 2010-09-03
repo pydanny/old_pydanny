@@ -58,7 +58,7 @@ STATICFILES_DIRS = [
 ADMIN_MEDIA_PREFIX = "/media/"
 
 # Make this unique, and don"t share it with anybody.
-SECRET_KEY = "fj4-3w&mf_dzdkstk!-*!x3p=ce@nd@i*myvk6tz@r&5cw(=4%"
+SECRET_KEY = "My crazy secret key"
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -81,6 +81,8 @@ ROOT_URLCONF = "pydanny_project.urls"
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, "templates"),
 )
+
+print TEMPLATE_DIRS
 
 INSTALLED_APPS = (
     "django.contrib.admin",
@@ -105,3 +107,8 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "staticfiles.context_processors.static_url",
 
 ]
+
+try:
+    from local_settings import *
+except ImportError:
+    pass

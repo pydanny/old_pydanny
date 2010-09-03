@@ -1,0 +1,1 @@
+SECRET_KEY = "fj4-3w&mf_dzdkstk!-*!x3p=ce@nd@i*myvk6tz@r&5cw(=4%"
