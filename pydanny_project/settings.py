@@ -82,8 +82,6 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, "templates"),
 )
 
-print TEMPLATE_DIRS
-
 INSTALLED_APPS = (
     "django.contrib.admin",
     "django.contrib.auth",
@@ -93,7 +91,7 @@ INSTALLED_APPS = (
     "django.contrib.messages",    
     "django.contrib.sessions",
     "django.contrib.sites",
-    "blogger"
+    "blogger",
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = [
@@ -107,6 +105,8 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "staticfiles.context_processors.static_url",
 
 ]
+
+BLOGGER_TARGET = "http://pydanny.blogspot.com/feeds/posts/default"
 
 try:
     from local_settings import *
