@@ -1,4 +1,10 @@
-{% load "blogger_tags" %}
-
 <h1>Blogger</h1>
 
+{% for entry in entries %}
+    <h2><a href="{{ entry.link }}">{{ entry.title }}</a></h2>
+    <div>    
+        {% for c in entry.content %}
+            {{ c.value|safe }}
+        {% endfor %}
+    </div>
+{% endfor %}

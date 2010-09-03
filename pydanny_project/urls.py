@@ -5,26 +5,21 @@ from django.views.generic.simple import direct_to_template
 
 admin.autodiscover()
 
+import feedparser
 
-def fetch_blog():
-    target = settings.BLOGGER_TARGET    
+def fetch_entries():
+    d = feedparser.parse(settings.BLOGGER_TARGET)
+    return d["entries"]
 
 
 urlpatterns = patterns('',
-    # Example:
-    # (r'^pydanny_project/', include('pydanny_project.foo.urls')),
 
-    # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
-    # to INSTALLED_APPS to enable admin documentation:
-    #(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
     
     (r'^$', direct_to_template, {"template":"base.html"}),
-    #(r'^blogger/$', direct_to_template, {"template":"blogger.html"}),    
-    (r'^$', direct_to_template, {"template":"blogger.html"
-    }),
+    (r'^blogger/$', direct_to_template, {"template":"blogger.html",
+                                    "extra_context": {"entries":fetch_entries()}
+                                    }),
     
 )
 

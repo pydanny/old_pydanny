@@ -91,7 +91,6 @@ INSTALLED_APPS = (
     "django.contrib.messages",    
     "django.contrib.sessions",
     "django.contrib.sites",
-    "blogger",
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = [
