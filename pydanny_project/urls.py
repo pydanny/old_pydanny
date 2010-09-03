@@ -17,10 +17,11 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     
     (r'^$', direct_to_template, {"template":"base.html"}),
-    (r'^blogger/$', direct_to_template, {"template":"blogger.html",
-                                    "extra_context": {"entries":fetch_entries()}
-                                    }),
-    
+    (r'^blogger/$', direct_to_template, 
+            {"template":"blogger.html",
+                "extra_context": {"entries":fetch_entries()}
+            }),
+
 )
 
 if settings.SERVE_MEDIA:
