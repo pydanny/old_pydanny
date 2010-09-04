@@ -10,33 +10,35 @@
 
 {% block extra_head_base %}{% block extra_head %}{% endblock %}{% endblock %}
 
-</head>
-
-<body>
-
 <script language="javascript" type="text/javascript">
             $(function() {
                 $("#webwidget_menu_glide1").webwidget_menu_glide({menu_width:"100", menu_height:"30", menu_text_size:"15", menu_text_color:"#FFF", menu_sprite_color:"#d6ad03", menu_background_color:"#C91A3E", menu_margin:"5", sprite_speed:"normal", container:"webwidget_menu_glide1" });
             });
 </script>
 
+</head>
+
+<body>
+
 <div id="webwidget_menu_glide1" class="webwidget_menu_glide">
     <div class="webwidget_menu_glide_sprite"></div>
         <ul>
-            <li><a href="/">Home</a></li>
+            <li class="current" id="nav-home"><a href="/">Home</a></li>
 
-            <li><a href="/about/">About</a></li>
-            <li class="current"><a href="/projects/">Projects</a></li>
-            <li><a href="/cv/">CV</a></li>
+            <li id="nav-about"><a href="/about/">About</a></li>
+            <li id="nav-projects"><a href="/projects/">Projects</a></li>
+            <li id="nav-cv"><a href="/cv/">CV</a></li>
 
-            <li><a href="/contact/">Contact</a></li>
+            <li id="nav-contact"><a href="/contact/">Contact</a></li>
         </ul>
     <div style="clear: both"></div>
 </div>
 
 <div id="page_header">
+<a href="/">
 <img id="logo" src="{{ STATIC_URL }}img/logo.png" />
 <h1>pydanny</h1>
+</a>
 </div>
 
 <div id="content">
@@ -46,7 +48,16 @@
 {% endblock %}
 </div>
 
-
+<div id="footer"> 
+    <div class="legal"> 
+        <hr /> 
+        &copy; 2010 <a href="http://pydanny.com">Daniel Greenfeld</a>
+        <br /> 
+        Powered by <a href="http://www.djangoproject.com/">Django</a> and built with <a href="http://djangopackages.com">Django Packages</a>
+        <br />
+        Design by <a href="http://fuzzyrainbow.com">Audrey Roy</a> 
+    </div> 
+</div>
 
 
 {% block extra_body_base %}{% block extra_body %}{% endblock %}{% endblock %}

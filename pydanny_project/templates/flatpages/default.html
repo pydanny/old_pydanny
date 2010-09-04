@@ -1,22 +1,18 @@
-<html>
+{% extends "base.html" %}
 
-<head>
-<title>pydanny:{% block head_title %}{{ flatpage.title }}{% endblock %}</title>
-<link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" />
-<link rel="stylesheet" href="{{ STATIC_URL }}css/base.css" />
-</head>
+{% block head_title %}{{ flatpage.title }}{% endblock %}
 
-<body>
-
-<div id="page_header">
-<h1>{{ flatpage.title }}</h1>
-</div>
-
-<div id="content">
 {% block content %}
-{{ flatpage.content }}
-{% endblock %}
-</div>
+<h2>{{ flatpage.title }}</h2>
 
-</body>
-</html>
+{{ flatpage.content }}
+
+{% endblock %}
+
+{% block extra_body %}
+    <script type="text/javascript">
+        $("*").removeClass("current");    
+        $("#nav-{{ flatpage.title|slugify }}").addClass("current");
+    </script>
+
+{% endblock %}
