@@ -108,6 +108,8 @@ TEMPLATE_CONTEXT_PROCESSORS = [
 
 BLOGGER_TARGET = "http://pydanny.blogspot.com/feeds/posts/default"
 
+DJANGO_WYSIWYG_FLAVOR = "ckeditor"
+
 try:
     from local_settings import *
 except ImportError:

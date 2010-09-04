@@ -7,11 +7,23 @@
 
 {% for entry in entries %}
     <h2><a href="{{ entry.link }}">{{ entry.title }}</a></h2>
-    <div>    
+    <div class="blog-entry">
         {% for c in entry.content %}
             {{ c.value|safe }}
         {% endfor %}
     </div>
+    <div class="links">        
+        {% for link in entry.links %}
+            {% if "Comments" in link.title %}
+                {% if "Post" in link.title %}
+                    <!-- for now do nothing, later add a facebox or something -->
+                {% else %}
+                    <a href="{{ link.href }}">{{ link.title }}</a><br />
+                {% endif %}
+            {% endif %}
+        {% endfor %}        
+    </div>
 {% endfor %}
+
 {% endblock %}
 
