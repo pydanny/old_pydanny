@@ -14,9 +14,15 @@ h6 {font-size:170%;}
 a, a:visited, a:hover {color:#89a02c; font-weight:900; text-decoration:none;}
 a:hover {text-decoration:underline;}
 
+#webwidget_menu_glide1 {float:right;margin:20px;width:550px;}
 
-#page_header {background:#e2fcfc url('../img/header_gradient.png') repeat-x; height:220px;}
+#page_header {background:#e2fcfc url('../img/header_gradient.png') repeat-x; height:122px;}
+#page_header h1 {color: #dedeae; font-size:350%; display:inline;}
 
-#page_header h1 {color:#378576;}
+#logo {margin:20px 10px 0 20px; width:60px; }
+
+#logo_text {color:#378576;}
+
+#title {position:absolute; left:700px; top:130px;}
 
 #content {width:800px; margin:0 auto;}

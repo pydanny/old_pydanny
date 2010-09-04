@@ -4,6 +4,9 @@
 <title>pydanny:{% block head_title %}Welcome{% endblock %}</title>
 <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" />
 <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css" />
+<link href="{{ STATIC_URL }}css/webwidget_menu_glide.css" rel="stylesheet" type="text/css"></link>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/webwidget_menu_glide.js"></script>
 
 {% block extra_head_base %}{% block extra_head %}{% endblock %}{% endblock %}
 
@@ -11,18 +14,40 @@
 
 <body>
 
+<script language="javascript" type="text/javascript">
+            $(function() {
+                $("#webwidget_menu_glide1").webwidget_menu_glide({menu_width:"100", menu_height:"30", menu_text_size:"15", menu_text_color:"#FFF", menu_sprite_color:"#d6ad03", menu_background_color:"#C91A3E", menu_margin:"5", sprite_speed:"normal", container:"webwidget_menu_glide1" });
+            });
+</script>
+
+<div id="webwidget_menu_glide1" class="webwidget_menu_glide">
+    <div class="webwidget_menu_glide_sprite"></div>
+        <ul>
+            <li><a href="/">Home</a></li>
+
+            <li><a href="/about/">About</a></li>
+            <li class="current"><a href="/projects/">Projects</a></li>
+            <li><a href="/cv/">CV</a></li>
+
+            <li><a href="/contact/">Contact</a></li>
+        </ul>
+    <div style="clear: both"></div>
+</div>
+
 <div id="page_header">
-<h1>{% block title %}pydanny{% endblock %}</h1>
+<img id="logo" src="{{ STATIC_URL }}img/logo.png" />
+<h1>pydanny</h1>
 </div>
 
 <div id="content">
+<h1>{% block title %}{% endblock %}</h1>
 {% block content %}
 <p>(coming soon)</p>
 {% endblock %}
 </div>
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+
 
 {% block extra_body_base %}{% block extra_body %}{% endblock %}{% endblock %}
 
