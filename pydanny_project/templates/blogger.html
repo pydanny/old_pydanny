@@ -2,10 +2,18 @@
 
 {% block head_title %}Blog{% endblock %}
 
+{% block extra_head %}
+    <link href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css" rel="stylesheet" type="text/css"/> 
+    <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js" type="text/javascript" />
+
+{% endblock %}
+
 {% block content %}
 <h1>Blogger</h1>
 
 {% for entry in entries %}
+    {% spaceless %}
+    {% if forloop.first %}
     <h2><a href="{{ entry.link }}">{{ entry.title }}</a></h2>
     <div class="blog-entry">
         {% for c in entry.content %}
@@ -13,17 +21,24 @@
         {% endfor %}
     </div>
     <div class="links">        
-        {% for link in entry.links %}
-            {% if "Comments" in link.title %}
-                {% if "Post" in link.title %}
-                    <!-- for now do nothing, later add a facebox or something -->
-                {% else %}
-                    <a href="{{ link.href }}">{{ link.title }}</a><br />
+        {% for entry in entries %}
+        {% if forloop.first %}    
+            {% for link in entry.links %}
+                {% if "Comments" in link.title %}
+                    {% if "Post" not in link.title %}
+                        <a href="{{ link.href|safe }}" id="comments-toggle" rel="nofollow">{{ link.title }} (links to another site)</a><br />
+                    {% endif %}
                 {% endif %}
-            {% endif %}
-        {% endfor %}        
+            {% endfor %}
+        {% endif %}
+        {% endfor %}
     </div>
+    {% endif %}
+    {% endspaceless %}            
 {% endfor %}
+
+<hr />
+<h3>foot blag bldd</h3>
 
 {% endblock %}
 
