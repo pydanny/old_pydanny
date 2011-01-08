@@ -1,5 +1,3 @@
-body {font-family:Helvetica LT, Helvetica, Arial, sans-serif; font-size:84%; color:#241c1c;}
-
 body, p, div {line-height:1.5;}
 
 h1, h2, h3, h4, h5, h6, p {padding:10px 0;}
@@ -11,12 +9,16 @@ h4 {font-size:180%;}
 h5 {font-size:175%;}
 h6 {font-size:170%;}
 
+ul {
+    list-style-type:circle;
+    list-style-position:inside;
+    margin: 30;
+}
+
 a, a:visited, a:hover {color:#89a02c; font-weight:900; text-decoration:none;}
 a:hover {text-decoration:underline;}
 
-#webwidget_menu_glide1 {float:right;margin:20px;width:550px;}
 
-#page_header {background:#e2fcfc url('../img/header_gradient.png') repeat-x; height:122px;}
 #page_header h1 {color: #dedeae; font-size:350%; display:inline;}
 #page_header a, a:visited, a:hover  {text-decoration:none;}
 
@@ -26,6 +28,30 @@ a:hover {text-decoration:underline;}
 
 #title {position:absolute; left:700px; top:130px;}
 
-#content {width:800px; margin:0 auto;}
+#content {width:800px; margin:0 auto; font-size:110%;}
 
 #footer {text-align:center;}
+
+body {
+    font-family:Helvetica LT, Helvetica, Arial, sans-serif; font-size:84%; color:#241c1c;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.oxymoron {
+    display:table;
+    width: 100%;
+    border-collapse:collapse;
+    border-spacing:10px;
+}
+
+.notarow {
+    display:table-row;
+}
+
+.notarow > div {
+    display:table-cell;
+}
+
+.hidden {display:none;}

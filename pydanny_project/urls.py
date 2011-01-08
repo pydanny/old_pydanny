@@ -5,23 +5,14 @@ from django.views.generic.simple import direct_to_template
 
 admin.autodiscover()
 
-import feedparser
-
-def fetch_entries():
-    d = feedparser.parse(settings.BLOGGER_TARGET)
-    return d["entries"]
-
-
 urlpatterns = patterns('',
 
-    (r'^admin/', include(admin.site.urls)),
+    (r'^nimda/', include(admin.site.urls)),
     
     #(r'^$', direct_to_template, {"template":"base.html"}),
     (r'^$', direct_to_template, 
-            {"template":"blogger.html",
-                "extra_context": {"entries":fetch_entries()}
-            }),
-
+            {"template":"home.html"}),
+url(r"", include("staticfiles.urls")),
 )
 
 if settings.SERVE_MEDIA:

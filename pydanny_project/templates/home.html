@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html lang="en"> 
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>pydanny: Daniel Greenfeld</title> 
+  <link rel="alternate" type="application/atom+xml" title="pydanny - Atom" href="http://pydanny.blogspot.com/feeds/posts/default" /> 
+  <link rel="alternate" type="application/rss+xml" title="pydanny - RSS" href="http://pydanny.blogspot.com/feeds/posts/default?alt=rss" />
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" />
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css" />  
+  <link type="text/css" href="{{ STATIC_URL }}css/humanity/jquery-ui-1.8.7.custom.css" rel="stylesheet" />	
+  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.min.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.8.7.custom.min.js"></script>
+
+  <script type="text/javascript" charset="utf-8"> 
+    // No frames.
+    if (top.frames.length != 0) { top.location = self.document.location; }
+  </script> 
+
+  
+</head> 
+<body>    
+    
+<div id="page_header" class="oxymoron">
+    <div class="notarow">
+        <div id="page_header_left">
+            <a href="/">
+                <img id="logo" src="{{ STATIC_URL }}img/logo.png" />
+                <h1>pydanny</h1>
+            </a>
+        </div>
+        <div id="page_header_right">
+            <a class="l_" id="l_home" href="#">Home</a> •            
+            <a class="l_" id="l_about" href="#">About</a> •
+            <a class="l_" id="l_blog" href="#">Blog</a> • 
+            <a class="l_" id="l_projects" href="#">Projects</a>
+        </div>
+    </div>
+</div>
+
+
+<div id="content">
+    <div class="chunk" id="home">
+        <h2>Home</h2>
+        <p>The personal website of Daniel Greenfeld, a writer, software developer and educator.</p>
+    </div>
+
+    <div class="chunk hidden" id="about">
+        <h2>About</h2>
+        <p>My name is Daniel Greenfeld. I'm passionate about everything I do.</p>
+        <h3>Software Development</h3>
+        <p>I would classify myself as a <a href="http://python.org">Python</a> developer. These days I do a lot of work with Django and JavaScript, but 
+            I'm not limited to just web development.</p>
+            <p>I'm always looking for new work, if not for myself then for other developers.</p>
+        <h3>Resume / CV</h3>
+        <p>You can a good up-to-date reference on <a href="http://careers.stackoverflow.com/pydanny">Stack Overflow Careers</a>.</p>
+        <p>You can find most of my open source work on <a href="https://github.com/pydanny">github</a>.</p>
+        <h3>Contacting me</h3>
+        <ul>
+            <li><a href="mailto:pydanny@pydanny.com">email</a></li>
+            <li><a href="https://twitter.com/pydanny">twitter</li>
+            <li><a href="https://github.com/pydanny">github</li>
+            <li><a href="https://bitbucket.com/pydanny">bitbucket</a></li>
+        </ul>    
+        <h3>Cartwheels and Handstands</h3>
+        <p>My sister figured out how to do a one-handed cartwheel when we were 9 and 10 respectively. I immediately copied her.</p> 
+        <p>I try to have my <a href="http://www.flickr.com/photos/pydanny/tags/cartwheel/">picture taken doing it in every new place I visit</a>.</p> 
+        <p>In the summer of 2010 I enhanced my cartwheels with some Capoeira fundamentals thanks to Celso Wills.</p>
+
+        <h3>About this site</h3>
+        <p>This site is powered by Django.</p>
+
+    </div>
+    
+    <div class="chunk hidden" id="blog">
+        <h2>Blog</h2>
+        <p>In 2011 I plan to write in <a href="http://pydanny.blogspot.com">my blog</a> at least once a week. In 2010
+            I didn't even hit 40 entries but this year I'm resolved to meet my goal.</p>
+    </div>
+    
+    <div class="chunk hidden" id="projects">
+        <h2>Projects</h2>
+        <p>All of my ongoing open source projects are on <a href="https://github.com/pydanny">github</a>.</p>
+        
+        <h3><a href="http://djangopackages.com">Django Packages</a></h3>
+        <p><a href="http://djangopackages.com">Django Packages</a> is an 
+            <a href="https://github.com/djangopackages/djangopackages">open source directory</a> of reusable apps, 
+            sites, tools and more for your Django projects launched during Django Dash 2011. The case study on
+            Django Packages will be a <a href="http://us.pycon.org/2011/schedule/sessions/56/">45 minute presentation at Pycon 2011</a>!
+        </p>
+        <ul>
+            <li><a href="http://pydanny.blogspot.com/2010/08/announcing-django-packages.html">Announcing Django Packages</a></li>
+            <li><a href="http://pydanny.blogspot.com/2010/08/django-dash-lessons-learned.html">Lessons learned</a></li>
+        </ul>    
+        
+        <h3>Django Uni-Form</h3>    
+        <p>content here</p>
+        
+        <h3>Pinax</h3>    
+        <p>content here</p>
+        
+    </div>    
+</div>    
+<div id="footer"> 
+    <div class="legal"> 
+        <hr /> 
+        &copy; 2011 <a href="http://pydanny.com">Daniel Greenfeld</a> 
+        <br /> 
+        Powered by <a href="http://www.djangoproject.com/">Django</a> and built with <a href="http://djangopackages.com">Django Packages</a> 
+        <br /> 
+        Design by <a href="http://fuzzyrainbow.com">Audrey Roy</a> 
+    </div> 
+</div> 
+
+<script type="text/javascript">
+    $(function() {   
+        $(".l_").click(function(){
+            $(".chunk").hide();
+            $("#" + this.id.replace("l_","")).show();            
+            
+        });                        
+    });    
+</script>
+    
+</body>
+</html>
